@@ -1,0 +1,86 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Siemens Logo Modbus",
+        "description": "Configure your Siemens Logo! 8.4. Set a count to 0 to disable that address space.\n\nThis integration was fully generated with Claude (Anthropic).",
+        "data": {
+          "host":              "Modbus IP Address",
+          "port":              "Modbus Port",
+          "refresh_interval":  "Refresh Interval (seconds)",
+          "input_count":       "Digital Inputs – I (1–24)",
+          "output_count":      "Digital Outputs – Q (1–20)",
+          "m_count":           "Memory Coils – M (0 = off, max 64)",
+          "v_count":           "Flag Bits – V (0 = off, max 6808)",
+          "ai_count":          "Analog Inputs – AI (0 = off, max 8)",
+          "aq_count":          "Analog Outputs – AQ (0 = off, max 8)",
+          "vw_count":          "Analog Memory – VW (0 = off, max 425)",
+          "am_count":          "Analog Memory 2 – AM (0 = off, max 64)",
+          "enable_nq":         "Enable NQ virtual outputs (AQ1→NQ1-8, AQ2→NQ9-16)",
+          "enable_m_selector": "Enable M10-M14 decimal selector (drives slave Logo)"
+        },
+        "data_description": {
+          "host":              "IPv4 address of the Logo",
+          "port":              "TCP port on the Logo (default: 510)",
+          "refresh_interval":  "How often Home Assistant polls the Logo (1–10 s)",
+          "input_count":       "Number of physical digital inputs wired (I1–I24)",
+          "output_count":      "Number of physical digital outputs wired (Q1–Q20)",
+          "m_count":           "Number of internal memory coils to expose (M1–M64)",
+          "v_count":           "Number of V flag bits to expose (V0.0–V850.7)",
+          "ai_count":          "Number of analog input channels (AI1–AI8)",
+          "aq_count":          "Number of analog output channels (AQ1–AQ8)",
+          "vw_count":          "Number of analog memory word registers (VW1–VW425)",
+          "am_count":          "Number of analog memory 2 registers (AM1–AM64)",
+          "enable_nq":         "Each bit of AQ1 (byte) maps to NQ1-NQ8, AQ2 maps to NQ9-NQ16. Requires AQ count ≥ 2.",
+          "enable_m_selector": "Exposes a number entity (0-31) that writes M10-M14 as individual coils. Value auto-resets to 0 after 1 second."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the Logo. Check the IP address, port, and that Modbus TCP is enabled on the Logo."
+    },
+    "abort": {
+      "already_configured": "This Logo is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Siemens Logo Modbus – Options",
+        "data": {
+          "host":              "Modbus IP Address",
+          "port":              "Modbus Port",
+          "refresh_interval":  "Refresh Interval (seconds)",
+          "input_count":       "Digital Inputs – I (1–24)",
+          "output_count":      "Digital Outputs – Q (1–20)",
+          "m_count":           "Memory Coils – M (0 = off, max 64)",
+          "v_count":           "Flag Bits – V (0 = off, max 6808)",
+          "ai_count":          "Analog Inputs – AI (0 = off, max 8)",
+          "aq_count":          "Analog Outputs – AQ (0 = off, max 8)",
+          "vw_count":          "Analog Memory – VW (0 = off, max 425)",
+          "am_count":          "Analog Memory 2 – AM (0 = off, max 64)",
+          "enable_nq":         "Enable NQ virtual outputs (AQ1→NQ1-8, AQ2→NQ9-16)",
+          "enable_m_selector": "Enable M10-M14 decimal selector (drives slave Logo)"
+        },
+        "data_description": {
+          "host":              "IPv4 address of the Logo",
+          "port":              "TCP port on the Logo (default: 510)",
+          "refresh_interval":  "How often Home Assistant polls the Logo (1–10 s)",
+          "input_count":       "Number of physical digital inputs wired (I1–I24)",
+          "output_count":      "Number of physical digital outputs wired (Q1–Q20)",
+          "m_count":           "Number of internal memory coils to expose (M1–M64)",
+          "v_count":           "Number of V flag bits to expose (V0.0–V850.7)",
+          "ai_count":          "Number of analog input channels (AI1–AI8)",
+          "aq_count":          "Number of analog output channels (AQ1–AQ8)",
+          "vw_count":          "Number of analog memory word registers (VW1–VW425)",
+          "am_count":          "Number of analog memory 2 registers (AM1–AM64)",
+          "enable_nq":         "Each bit of AQ1 (byte) maps to NQ1-NQ8, AQ2 maps to NQ9-NQ16. Requires AQ count ≥ 2.",
+          "enable_m_selector": "Exposes a number entity (0-31) that writes M10-M14 as individual coils. Value auto-resets to 0 after 1 second."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the Logo. Check the IP address, port, and that Modbus TCP is enabled."
+    }
+  }
+}
